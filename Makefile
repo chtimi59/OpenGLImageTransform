@@ -5,9 +5,9 @@ CFLAGS=-std=c99
 CPPFLAGS=-std=c++0x -Wno-write-strings $(INC)
 
 OPENGL_INCLUDE=-Iglew/include -Iglm
+OPENGL_LIB=-Lglew/lib/Release/Win32 -lglew32s -lopengl32 -lgdi32
 
 LDFLAGS=-g -O2 -Wall -W $(LD_LIB)
-OPENGLLIB=-Lglew/lib/Release/Win32 -lglew32s -lopengl32 -lgdi32
 STDCPPLIB=-lstdc++
 
 
@@ -19,7 +19,7 @@ test:
 	./main.exe
 	
 main: log.o gldebug.o w32.o glgrid.o xbuf.o main.o
-	$(CC) -o $@ $^  $(LIBS) $(LDFLAGS) $(OPENGLLIB) $(STDCPPLIB) 
+	$(CC) -o $@ $^  $(LIBS) $(LDFLAGS) $(OPENGL_LIB) $(STDCPPLIB) 
 
 # basics rules	
 %.o: %.c

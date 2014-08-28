@@ -1,0 +1,15 @@
+/glm
+/glew
+
+/Debug
+/Release
+/ipch
+/vs2010.exe
+/vs2010.ilk
+/vs2010.sdf
+/vs2010.suo
+
+/*.o
+/main.exe
+
+/main

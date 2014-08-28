@@ -17,6 +17,7 @@ Buffer_t * CreateBuffer2(int width, int height, int sample_sz, int pitch);
 Buffer_t * CreateBuffer3(int width, int height, int sample_sz, int pitch, void* data);
 void FreeBuffer(Buffer_t * buff);
 
+int bufRectCpy(Buffer_t* buffDst, Point_t dstPoint, Buffer_t* buffSrc, Rect_t srcRect);
 int bufFillByte(Buffer_t* buf, BYTE v);
 
 

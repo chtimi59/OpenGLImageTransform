@@ -39,12 +39,12 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Makefile" />
-    <None Include="README.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="sources">
       <UniqueIdentifier>{8bc82956-0633-495d-bc9c-986b1fb6383c}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+    <None Include="README.md" />
   </ItemGroup>
 </Project>

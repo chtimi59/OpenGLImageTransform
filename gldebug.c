@@ -6,7 +6,6 @@
 #endif
 #include <GL/glew.h>
 
-#define LOGENABLE
 #include <stdlib.h> 
 #include "log.h"
 
@@ -54,7 +53,7 @@ int SaveBMP(const char * imagepath, int width, int height, int pitch, unsigned c
 
 
 int SaveBMPFromXBUFF(const char * imagepath, Buffer_t * input) {
-    int errorcode = 0;
+
     if (NULL==input) {
         DBGERROR("SaveBMP: Buffer Error\n");
         return 1;
@@ -191,7 +190,7 @@ Buffer_t* LoadBMPToXBUFF(const char * imagepath)
     HEADER header = {0};
     INFOHEADER infoHeader = {0};
     unsigned char * data = NULL;
-    Buffer_t * output = NULL;
+
     int pitch = 0;
 
     if(LoadBMP(imagepath, &header, &infoHeader, &data)) {

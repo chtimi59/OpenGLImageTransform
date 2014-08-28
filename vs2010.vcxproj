@@ -28,7 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Makefile" />
-    <None Include="README.txt" />
+    <None Include="README.md" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{91AB6136-A0A6-4093-BF1E-561B83C24728}</ProjectGuid>

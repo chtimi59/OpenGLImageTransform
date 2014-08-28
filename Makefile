@@ -1,6 +1,6 @@
 CC=gcc
 CPP=g++
-FLAGS=-Wall -ansi -pedantic -DLOGENABLE -Wno-unused-function $(INC)
+FLAGS=-Wall -ansi -pedantic -DLOGENABLE -Wno-unused-function -DLOGENABLE $(INC)
 CFLAGS=-std=c99 
 CPPFLAGS=-std=c++0x -Wno-write-strings $(INC)
 

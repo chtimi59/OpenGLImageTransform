@@ -78,6 +78,63 @@ Example :
 =========
 
 ![Source Image](/image.bmp)
+
+```c
+void dummy_transform(Grid_t* grid)
+{
+    // Rotation center
+    float x0 = grid->rect.width/2;
+    float y0 = grid->rect.height/2;
+
+    float minX = 0;
+    float maxX = 0;
+    float minY = 0;
+    float maxY = 0;
+    int i;
+	
+    for (i = 0; i < grid->count; i++)
+    {
+        float * pX = &grid->vertices[3 * i + 0];
+        float * pY = &grid->vertices[3 * i + 1];
+
+        float x = *pX;
+        float y = *pY;
+
+        float r = (float)sqrt((x - x0)*(x - x0) + (y - y0)*(y - y0));
+        float a = (float)atan2((x - x0),(y - y0));
+        
+		// The dummy transform
+        r =  r * 0.07f;
+        r =  r * r;
+        a += 0.2f;
+        if (r>800) r = 800;
+        
+        *pX = x0 + r*(float)sin(a);
+        *pY = y0 + r*(float)cos(a);
+
+		// Compute new dimensions bounding box
+        if (i == 0) {
+            minX = *pX;
+            maxX = *pX;
+            minY = *pY;
+            maxY = *pY;
+        } else {
+            if (minX>*pX)  minX = *pX;
+            if (maxX<*pX)  maxX = *pX;
+            if (minY>*pY)  minY = *pY;
+            if (maxY<*pY)  maxY = *pY;
+        }
+    }
+
+	// Update grid dimension
+    grid->rect.x = minX;
+    grid->rect.y = minY;
+    grid->rect.width = maxX - minX;
+    grid->rect.height = maxY - minY;
+    IFRectFloat2Int(&grid->rect);
+}
+```
+
 ![Output Image](/result.bmp)
 
 Have fun !

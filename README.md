@@ -25,8 +25,8 @@ History
 Prequists
 ==========
 
-GLM 0.9.5.4
-GLEW 1.11.0   +CMAKE 3.0.0 (if you compile glew sources)
+- GLM 0.9.5.4
+- GLEW 1.11.0   +CMAKE 3.0.0 (if you compile glew sources)
 
 Note about Linux/Cygwin
 =======================
@@ -66,17 +66,19 @@ Sources :
 * main.c                  : Very simple demo test
 
 
-Others sources files :
-======================
-* log.c/log.h             : Generic Logging system (with debug level)
-* xbuf.c / xbuf.h         : Methods to manage a generic 2D memory buffer
-* gldebug.cpp / gldebug.h : Tools to [create|save] openGL texture or XBUF buffer [from|to] BMP files
+# Others sources files :
+* log.c/log.h               : Generic Logging system (with debug level)
+* xbuf.c / xbuf.h           : Methods to manage a generic 2D memory buffer
+* gldebug.cpp / gldebug.h   : Tools to [create|save] openGL texture or XBUF buffer [from|to] BMP files
+* glctx.h                   : OS Dependant (use to get an OPEN GL context)
+* x11.cpp, w32.cpp, mac.cpp	: OS implementation of glctx methods
+* common.h                  : basic type definitions and common header
 
-* glctx.h                 : OS Dependant (use to get an OPEN GL context)
-* x11.cpp, w32.cpp, mac.cpp
-						  
-* common.h                : basic type definitions and common header
+Example :
+=========
 
+![Source Image](/image.bmp)
+![Output Image](/result.bmp)
 
 Have fun !
 
